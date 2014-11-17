@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6CAA15F61A196485008057BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA15F51A196485008057BF /* AppDelegate.swift */; };
-		6CAA15F81A196485008057BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA15F71A196485008057BF /* ViewController.swift */; };
+		6CAA15F81A196485008057BF /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA15F71A196485008057BF /* SearchResultsViewController.swift */; };
 		6CAA15FB1A196485008057BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA15F91A196485008057BF /* Main.storyboard */; };
 		6CAA15FD1A196485008057BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA15FC1A196485008057BF /* Images.xcassets */; };
 		6CAA16001A196485008057BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA15FE1A196485008057BF /* LaunchScreen.xib */; };
 		6CAA160C1A196485008057BF /* MusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA160B1A196485008057BF /* MusicPlayerTests.swift */; };
+		6CAA16161A19C1BB008057BF /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA16151A19C1BB008057BF /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		6CAA15F01A196485008057BF /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA15F41A196485008057BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CAA15F51A196485008057BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6CAA15F71A196485008057BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CAA15F71A196485008057BF /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		6CAA15FA1A196485008057BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CAA15FC1A196485008057BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6CAA15FF1A196485008057BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6CAA16051A196485008057BF /* MusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA160A1A196485008057BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CAA160B1A196485008057BF /* MusicPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerTests.swift; sourceTree = "<group>"; };
+		6CAA16151A19C1BB008057BF /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = ../APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		6CAA15F21A196485008057BF /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				6CAA16151A19C1BB008057BF /* APIController.swift */,
 				6CAA15F51A196485008057BF /* AppDelegate.swift */,
-				6CAA15F71A196485008057BF /* ViewController.swift */,
+				6CAA15F71A196485008057BF /* SearchResultsViewController.swift */,
 				6CAA15F91A196485008057BF /* Main.storyboard */,
 				6CAA15FC1A196485008057BF /* Images.xcassets */,
 				6CAA15FE1A196485008057BF /* LaunchScreen.xib */,
@@ -212,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CAA15F81A196485008057BF /* ViewController.swift in Sources */,
+				6CAA15F81A196485008057BF /* SearchResultsViewController.swift in Sources */,
 				6CAA15F61A196485008057BF /* AppDelegate.swift in Sources */,
+				6CAA16161A19C1BB008057BF /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +409,7 @@
 				6CAA16111A196485008057BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CAA16121A196485008057BF /* Build configuration list for PBXNativeTarget "MusicPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				6CAA16141A196485008057BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
