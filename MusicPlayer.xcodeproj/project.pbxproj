@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CA5DAD41A21B71D00F53315 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CA5DAD31A21B71D00F53315 /* Blank52.png */; };
 		6CAA15F61A196485008057BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA15F51A196485008057BF /* AppDelegate.swift */; };
 		6CAA15F81A196485008057BF /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA15F71A196485008057BF /* SearchResultsViewController.swift */; };
 		6CAA15FB1A196485008057BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA15F91A196485008057BF /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6CA5DAD31A21B71D00F53315 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = ../../../../Desktop/Blank52.png; sourceTree = "<group>"; };
 		6CAA15F01A196485008057BF /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA15F41A196485008057BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CAA15F51A196485008057BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		6CAA15F21A196485008057BF /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				6CA5DAD31A21B71D00F53315 /* Blank52.png */,
 				6CAA16151A19C1BB008057BF /* APIController.swift */,
 				6CAA15F51A196485008057BF /* AppDelegate.swift */,
 				6CAA15F71A196485008057BF /* SearchResultsViewController.swift */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CAA15FB1A196485008057BF /* Main.storyboard in Resources */,
+				6CA5DAD41A21B71D00F53315 /* Blank52.png in Resources */,
 				6CAA16001A196485008057BF /* LaunchScreen.xib in Resources */,
 				6CAA15FD1A196485008057BF /* Images.xcassets in Resources */,
 			);
