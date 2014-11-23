@@ -10,7 +10,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
 
-    var api = APIController()
+    var api : APIController?
     
     let kCellIdentifier: String = "SearchResultCell"
     var tableData = []
@@ -21,8 +21,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        api.searchItunesFor("Angry Birds")
-        self.api.delegate = self
+        api = APIController(delegate: self)
+        api!.searchItunesFor("Angry Birds")
     }
 
     override func didReceiveMemoryWarning() {
