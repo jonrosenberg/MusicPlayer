@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C5CA1111A2787770063BDB8 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CA1101A2787770063BDB8 /* Track.swift */; };
+		6C5CA1131A2789B80063BDB8 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CA1121A2789B80063BDB8 /* TrackCell.swift */; };
 		6CA5DAD41A21B71D00F53315 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CA5DAD31A21B71D00F53315 /* Blank52.png */; };
 		6CA970EC1A225DC200349842 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA970EB1A225DC200349842 /* Album.swift */; };
 		6CA970EE1A22615200349842 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA970ED1A22615200349842 /* DetailsViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C5CA1101A2787770063BDB8 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		6C5CA1121A2789B80063BDB8 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		6CA5DAD31A21B71D00F53315 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = ../../../../Desktop/Blank52.png; sourceTree = "<group>"; };
 		6CA970EB1A225DC200349842 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		6CA970ED1A22615200349842 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			children = (
 				6CA5DAD31A21B71D00F53315 /* Blank52.png */,
 				6CAA16151A19C1BB008057BF /* APIController.swift */,
+				6C5CA1121A2789B80063BDB8 /* TrackCell.swift */,
 				6CAA15F51A196485008057BF /* AppDelegate.swift */,
 				6CAA15F71A196485008057BF /* SearchResultsViewController.swift */,
 				6CAA15F91A196485008057BF /* Main.storyboard */,
@@ -95,6 +100,7 @@
 				6CAA15F31A196485008057BF /* Supporting Files */,
 				6CA970EB1A225DC200349842 /* Album.swift */,
 				6CA970ED1A22615200349842 /* DetailsViewController.swift */,
+				6C5CA1101A2787770063BDB8 /* Track.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -225,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C5CA1131A2789B80063BDB8 /* TrackCell.swift in Sources */,
 				6CAA15F81A196485008057BF /* SearchResultsViewController.swift in Sources */,
+				6C5CA1111A2787770063BDB8 /* Track.swift in Sources */,
 				6CAA15F61A196485008057BF /* AppDelegate.swift in Sources */,
 				6CAA16161A19C1BB008057BF /* APIController.swift in Sources */,
 				6CA970EC1A225DC200349842 /* Album.swift in Sources */,

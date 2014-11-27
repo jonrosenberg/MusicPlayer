@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
 
@@ -44,19 +45,12 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         return albums.count
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        // Get the row data for the selected row
-//        var rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
-//        
-//        var name: String = rowData["trackName"] as String
-//        var formattedPrice: String = rowData["formattedPrice"] as String
-//        
-//        var alert: UIAlertView = UIAlertView()
-//        alert.title = name
-//        alert.message = formattedPrice
-//        alert.addButtonWithTitle("Ok")
-//        alert.show()
-//    }
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animateWithDuration(0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+        })
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -125,6 +119,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
     }
+    
+    
     
     
 }
