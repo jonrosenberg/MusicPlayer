@@ -18,11 +18,8 @@ class DetailsViewController: UIViewController, APIControllerProtocol, UITableVie
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var albumCover: UIImageView!
     @IBOutlet weak var tracksTableView: UITableView!
-
     lazy var api : APIController = APIController(delegate: self)
-    
     var mediaPlayer: MPMoviePlayerController = MPMoviePlayerController()
-
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,10 +39,6 @@ class DetailsViewController: UIViewController, APIControllerProtocol, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tracks.count
     }
-    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        return UITableViewCell()
-//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell") as TrackCell

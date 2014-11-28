@@ -11,15 +11,14 @@ import QuartzCore
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
 
-    var api : APIController?
-    
-    let kCellIdentifier: String = "SearchResultCell"
-//    var tableData = []
-    var albums = [Album]()
-    var imageCache = [String : UIImage]()
-    
     @IBOutlet var appsTableView : UITableView?
 
+    var albums = [Album]()
+    var api : APIController?
+    var imageCache = [String : UIImage]()
+    let kCellIdentifier: String = "SearchResultCell"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,30 +26,18 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         api!.searchItunesFor("Beatles")
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var detailsViewController: DetailsViewController = segue.destinationViewController as DetailsViewController
-        var albumIndex = appsTableView!.indexPathForSelectedRow()!.row
-        var selectedAlbum = self.albums[albumIndex]
-        detailsViewController.album = selectedAlbum
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums.count
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
-        UIView.animateWithDuration(0.25, animations: {
-            cell.layer.transform = CATransform3DMakeScale(1,1,1)
-        })
-    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -109,6 +96,20 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         cell.detailTextLabel?.text = formattedPrice
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animateWithDuration(0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+        })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var detailsViewController: DetailsViewController = segue.destinationViewController as DetailsViewController
+        var albumIndex = appsTableView!.indexPathForSelectedRow()!.row
+        var selectedAlbum = self.albums[albumIndex]
+        detailsViewController.album = selectedAlbum
     }
 
     func didReceiveAPIResults(results: NSDictionary) {

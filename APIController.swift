@@ -13,22 +13,11 @@ protocol APIControllerProtocol {
 }
 
 class APIController {
+    
     var delegate: APIControllerProtocol
     
     init(delegate: APIControllerProtocol) {
         self.delegate = delegate
-    }
-    
-    func searchItunesFor(searchTerm: String) {
-        
-        // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
-        let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-        
-        // Now escape anything else that isn't URL-friendly
-        if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
-            let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=music&entity=album"
-            get(urlPath)
-        }
     }
     
     func get(path: String){
@@ -56,6 +45,18 @@ class APIController {
         task.resume()
     }
     
+    func searchItunesFor(searchTerm: String) {
+        
+        // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
+        let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        
+        // Now escape anything else that isn't URL-friendly
+        if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
+            let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=music&entity=album"
+            get(urlPath)
+        }
+    }
+
     func lookupAlbum(collectionId: Int) {
         get("https://itunes.apple.com/lookup?id=\(collectionId)&entity=song")
     }
