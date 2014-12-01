@@ -9,8 +9,9 @@
 import UIKit
 import QuartzCore
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, APIControllerProtocol {
 
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet var appsTableView : UITableView?
 
     var albums = [Album]()
@@ -32,11 +33,25 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         // Dispose of any resources that can be recreated.
     }
     
+    // UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        var searchText = self.searchField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        if searchText.utf16Count > 0{
+            println(searchText)
+            api!.searchItunesFor(searchText)
+
+//            self.toDoItem = ToDoItem(name: self.searchField.text)
+        }
+        
+        println("done!")
+        textField.resignFirstResponder()
+        return false
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums.count
     }
-    
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
