@@ -60,8 +60,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
         // Add a check to make sure this exists
         let album = self.albums[indexPath.row]
-        cell.textLabel.text = album.title
-        cell.imageView.image = UIImage(named: "Blank52")
+        cell.textLabel?.text = album.title
+        cell.imageView?.image = UIImage(named: "Blank52")
         
         // Get the formatted price string for display in the subtitle
         let formattedPrice = album.price
@@ -90,7 +90,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
                     self.imageCache[urlString] = image
                     dispatch_async(dispatch_get_main_queue(), {
                         if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
-                            cellToUpdate.imageView.image = image
+                            cellToUpdate.imageView?.image = image
                         }
                     })
                 }
@@ -103,7 +103,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         else {
             dispatch_async(dispatch_get_main_queue(), {
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
-                    cellToUpdate.imageView.image = image
+                    cellToUpdate.imageView?.image = image
                 }
             })
         }
